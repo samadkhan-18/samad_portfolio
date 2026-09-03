@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.header{
+  background-color:black ;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  border: 1px solid black;
+}
+.heading{
+  color: whitesmoke;
+  font-size:15px;
+  font-style: italic;
+  height: 80px;
+  width: 70%;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+    padding-left: 20px;
+  }
+.navi{
+  height: 80px;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  margin: 20 30px;
+}
+link {
+  height: 40px;
+  width: 40%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+ .list{
+  display: flex;
+  justify-self: space-around;
+  height: 40px;
+  width: 98%;
+ 
+  
+}
+ul li a {
+  text-decoration: none;
+}
+ul li {
+  text-decoration: none;
+  list-style: none;
+  font-style: italic;
+  align-items: center;
+  margin: 0 20px;
+  margin-block-start:0.4em ;
+  font-size: 20px; 
+  padding: 2px 5px;
+  border: 1px solid whitesmoke  ;
+  border-radius: 8px;
+ }
+  ul li:hover{
+    background-color:transparent;
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: 0.3s;
+  }
+    .body{
+    background-color: whitesmoke;
+    border: 1px solid black;
+    height: 800px;
+    width: 100%;
+    background-image: url();
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;  
+  }
+.lbody{
+        height: 800px;
+        float: left;
+        border: 1px solid black;
+        background-image: url('register.jpg');
+        width: 50%;
+        display: flex;
+        background-size: cover;
+        background-position: center;
+ }
+.rbody{
+        height: 800px;
+        width: 100%;
+        float: right;
+        border: 1px solid black;
+        background-image: url(regist.webp);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+input{
+    padding: 10px;
+    margin: 7px;
+    width: 80%;
+   border: 1px solid blueviolet;
+   border-radius: 5px;
+}
+
+#h1{
+    font-size: 35px;
+    font-style: bold;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: black;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 90%;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row label {
+    font-size: 20px;
+    font-style: bold;
+    margin-bottom: 5px;
+}
+
+.full-width {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+}
+input[type=".form-row"]{
+    color: whitesmoke;
+}
+input[type="submit"] {
+    width: 30%;
+    background-color: limegreen;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: green;
+}
+
+</style>
+<body>
+
+    <div class="header">
+        <div class="heading">
+      <h1>Malicious URL Scanner. </h1>
+    </div>
+    <div class="navi">
+    <div class="link">
+      <ul class="list" >
+      <li><a href="index.html" style="color: whitesmoke;">Home</a ></li>
+      <li><a href="admin.html" style="color: whitesmoke;">Admin</a></li>
+      <li><a href="user.html"  style="color: whitesmoke;">User</a></li>
+      <li><a href="#"  style="color: whitesmoke;">About</a></li>
+      <li><a href="#"  style="color: whitesmoke;">Contact</a></li>  
+      </ul> 
+    </div>   
+    </div>
+  </div>
+
+    <div class="body">
+        <div class="lbody">
+
+        </div>
+        <div class="rbody">
+            <h1 id="h1">Register Here</h1>
+            <form action="register.php" method="post" enctype="multipart/form-data" class="form-grid">
+    <div class="form-row">
+        <label for="username">Name</label>
+        <input type="text" name="username" required>
+    </div>
+    <div class="form-row">
+        <label for="age">Age</label>
+        <input type="text" name="age" required>
+    </div>
+    <div class="form-row">
+        <label for="email">Email</label>
+        <input type="email" name="email" required>
+    </div>
+    <div class="form-row">
+        <label for="password">Password</label>
+        <input type="password" name="password" required>
+    </div>
+    <div class="form-row">
+        <label for="contact">Contact</label>
+        <input type="text" name="contact" required>
+    </div>
+    <div class="form-row">
+        <label for="city">City</label>
+        <input type="text" name="city" required>
+    </div>
+    <div class="form-row">
+        <label for="picture">Upload Picture</label>
+        <input type="file" name="picture" required>
+    </div>
+    <div class="form-row full-width">
+        <input type="submit" value="Submit">
+    </div>
+</form>
+
+        </div>
+    </div>
+        
+</body>
+</html>

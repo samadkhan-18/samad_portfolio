@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+.body{
+  background: url('bg1.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.header{
+  background-color:black ;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  border: 1px solid black;
+  
+}
+.heading{
+  color: white;
+  font-size:15px;
+  font-style: italic;
+  height: 80px;
+  width: 70%;
+  border: 1px solid black;
+  display: flex;
+  padding-left:20px;
+  }
+.navi{
+  height: 80px;
+  width: 40%;
+  
+  display: flex;
+  align-items: center;
+  margin: 20 30px;
+;
+}
+link {
+  height: 40px;
+  width: 40%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+ .list{
+  display: flex;
+  justify-self: space-around;
+  height: 40px;
+  width: 98%;
+ 
+  
+}
+ul li a{
+  text-decoration: none;
+  
+}
+  ul li{
+  text-decoration: none;
+  list-style: none;
+  font-style: italic;
+  align-items: center;
+  margin: 0 20px;
+  margin-block-start:0.4em ;
+  font-size: 20px; 
+  padding: 2px 5px;
+  border: 1px solid whitesmoke  ;
+  border-radius: 8px;
+  
+ 
+
+ }
+  ul li:hover{
+    background-color:transparent;
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: 0.3s;
+  }
+ 
+
+.body{
+height: 800px;
+width: 100%;
+border: 2px solid black;
+}
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; 
+  position: relative;
+  text-align: center;
+}
+
+.hero-content {
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 4em;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+.hero-content h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: whitesmoke;
+}
+
+.btn-start, .btn-work {
+  padding: 10px 20px;
+  margin: 10px;
+  text-decoration: none;
+  color: white;
+  background-color:orange;
+  border-radius: 5px;
+  border: 2px solid white;
+  transform: scale(1);
+}
+
+.footer{
+  height: 150px;
+  width: 100%;
+  background-color: black;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+
+}
+.fleft{
+  height: 150px;
+  width: 50%;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column; 
+  }
+.fleft h2{
+  height: 15px;
+  width: 100%;
+}
+.fleft img{
+  height: 40px;
+  margin: 10px 10px;
+  border-radius: 50%;
+  margin-top: 10px;
+  cursor: pointer
+}
+.flcontent{
+  width: 100%;
+  height: 100px;
+  display: flex;
+}
+.fright{
+  height: 150px;
+  width: 50%;
+  border: 1px solid white;
+  display: flex;
+  }
+
+  
+</style>
+<body>
+  
+  <div class="header">
+        <div class="heading">
+      <h1>Malicious URL Scanner. </h1>
+
+    </div>
+    <div class="navi">
+    <div class="link">
+      <ul class="list" >
+      <li><a href="#" style="color: whitesmoke;">Home</a ></li>
+      <li><a href="admin.html" style="color: whitesmoke;">Admin</a></li>
+      <li><a href="user.html"  style="color: whitesmoke;">User</a></li>
+      <li><a href="#"  style="color: whitesmoke;">About</a></li>
+      <li><a href="#"  style="color: whitesmoke;">Contact</a></li>  
+      </ul> 
+    </div>   
+    </div>
+  </div>
+
+
+
+  <div class="body">
+    <marquee style= "Color: white; margin-top: 20px;"   >SAMAD</marquee>
+    <div class="hero-section">
+  <div class="hero-content">
+    <h2>DESIGN DRIVEN FOR PROFESSIONAL</h2>
+    <h1>WE CRAFT DIGITAL <br>EXPERIANCES</h1>
+    <div>
+      <a href="#" class="btn-start">Get Started</a>
+      <a href="#" class="btn-work">Our work</a>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+
+
+
+
+
+  <div class="footer">
+    <div class="fleft">
+      <h1 >Contact Us.</h1>
+      <div class="flcontent">
+      <a href=""><img src="insta.jpg" alt=""></a>
+      <a href=""><img src="facebook.jpg" alt=""></a>
+      <a href=""><img src="yt.jpg" alt=""></a>
+      <a href=""><img src="in.jpg" alt=""></a>
+      </div>
+    </div>
+
+
+    <div class="fright"> </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

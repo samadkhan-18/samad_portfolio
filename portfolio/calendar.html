@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Calendar</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Amazing Calendar UI */
+    .calendar-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 60vh;
+      background: var(--surface-color, #181818);
+    }
+    .calendar-ui {
+      background: linear-gradient(135deg, #149ddd 0%, #222 100%);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px rgba(20,157,221,0.18);
+      padding: 36px 32px;
+      max-width: 400px;
+      width: 100%;
+      margin: 0 auto;
+      color: #fff;
+      animation: fadeIn 0.7s;
+      position: relative;
+      overflow: hidden;
+    }
+    .calendar-ui .calendar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+    .calendar-ui .calendar-header button {
+      background: #fff;
+      color: #149ddd;
+      border: none;
+      font-size: 1.5em;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px #149ddd44;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+    .calendar-ui .calendar-header button:hover {
+      background: #149ddd;
+      color: #fff;
+      transform: scale(1.08);
+    }
+    .calendar-ui .calendar-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-align: center;
+      flex: 1;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+    }
+    .calendar-ui .calendar-weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+      margin-bottom: 8px;
+    }
+    .calendar-ui .calendar-weekdays div {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      text-align: center;
+      padding: 8px 0;
+      background: rgba(255,255,255,0.08);
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .calendar-ui .calendar-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      min-height: 220px;
+      animation: slideUp 0.5s;
+    }
+    .calendar-ui .calendar-days div {
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 500;
+      text-align: center;
+      padding: 14px 0;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      position: relative;
+      z-index: 1;
+    }
+    .calendar-ui .calendar-days div:hover {
+      background: #149ddd;
+      color: #fff;
+      transform: scale(1.08);
+      box-shadow: 0 2px 12px #149ddd44;
+      z-index: 2;
+    }
+    .calendar-ui .calendar-days .today {
+      background: #fff;
+      color: #149ddd;
+      font-weight: 700;
+      border-radius: 50%;
+      box-shadow: 0 2px 12px #149ddd44;
+      animation: pop 0.5s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95);}
+      to { opacity: 1; transform: scale(1);}
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes pop {
+      0% { transform: scale(0.5);}
+      70% { transform: scale(1.2);}
+      100% { transform: scale(1);}
+    }
+    @media (max-width: 500px) {
+      .calendar-ui {
+        padding: 18px 6px;
+        max-width: 98vw;
+      }
+      .calendar-ui .calendar-title {
+        font-size: 1.1rem;
+      }
+      .calendar-ui .calendar-days div {
+        font-size: 1rem;
+        padding: 10px 0;
+      }
+    }
+  </style>
+</head>
+
+<body class="calendar-page">
+
+  <!-- Header, Sidebar, and Navigation (unchanged, from your template) -->
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <div class="profile-img">
+      <img src="assets/img/myprofile.jpeg" alt="" class="img-fluid rounded-circle">
+    </div>
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">SAMAD KHAN</h1>
+    </a>
+    <div class="social-links text-center">
+      <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Calendar</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Calendar</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Calendar Section -->
+    <section id="calendar-section" class="calendar-section section">
+      <div class="calendar-ui" data-aos="fade-up">
+        <div class="calendar-header">
+          <button id="prevMonth" aria-label="Previous Month">❮</button>
+          <div class="calendar-title" id="calendarMonthYear"></div>
+          <button id="nextMonth" aria-label="Next Month">❯</button>
+        </div>
+        <div class="calendar-weekdays">
+          <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+        </div>
+        <div class="calendar-days" id="calendarDays"></div>
+      </div>
+    </section><!-- /Calendar Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Calendar JS -->
+  <script>
+    const calendarMonthYear = document.getElementById("calendarMonthYear");
+    const calendarDays = document.getElementById("calendarDays");
+    const prevMonthBtn = document.getElementById("prevMonth");
+    const nextMonthBtn = document.getElementById("nextMonth");
+
+    const months = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+
+    let currentDate = new Date();
+    let currentMonth = currentDate.getMonth();
+    let currentYear = currentDate.getFullYear();
+
+    function renderCalendar(month, year) {
+      calendarDays.innerHTML = "";
+
+      const firstDay = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+      calendarMonthYear.textContent = `${months[month]} ${year}`;
+
+      // Blank days before first day
+      for (let i = 0; i < firstDay; i++) {
+        const blank = document.createElement("div");
+        blank.style.visibility = "hidden";
+        calendarDays.appendChild(blank);
+      }
+
+      // Days of month
+      for (let day = 1; day <= daysInMonth; day++) {
+        const dayCell = document.createElement("div");
+        const today = new Date();
+
+        if (
+          day === today.getDate() &&
+          month === today.getMonth() &&
+          year === today.getFullYear()
+        ) {
+          dayCell.className = "today";
+        }
+        dayCell.textContent = day;
+        calendarDays.appendChild(dayCell);
+      }
+    }
+
+    function changeMonth(direction) {
+      currentMonth += direction;
+      if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+      } else if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+      }
+      calendarDays.classList.remove("calendar-days");
+      void calendarDays.offsetWidth; // Force reflow
+      calendarDays.classList.add("calendar-days");
+      renderCalendar(currentMonth, currentYear);
+    }
+
+    prevMonthBtn.addEventListener("click", function() {
+      changeMonth(-1);
+    });
+    nextMonthBtn.addEventListener("click", function() {
+      changeMonth(1);
+    });
+
+    renderCalendar(currentMonth, currentYear);
+  </script>
+
+</body>
